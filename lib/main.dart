@@ -1,48 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:chp_13/category.dart';
+
+// Pass to custom app
+// The icon, color, and text should be passed into the Category widget upon instantiation. They should be required.
+
+const _categoryName= 'Lake';
+const _categoryIcon = Icons.list;
+const _categoryColor = Colors.orange;
 
 void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: unitConverterBar(),
-        body: unitConverterTile(),
-      ),
-    ),
-  );
+  runApp(UnitConverterApp());
 }
 
-Widget unitConverterBar() {
-  return AppBar(
-    title: Text('Unit Converter'),
-  );
-}
+class UnitConverterApp extends StatelessWidget {
 
-class unitConverterTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Material(
-        child: Container(
-      color: Colors.green,
-      child: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: InkWell(
-          highlightColor: Colors.purple,
-          onTap: () {
-            print('I was trunjapped');
-          },
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Icon(Icons.cake),
-              ),
-              Center(child: Text('Row Title'))
-            ],
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Piyush Unit Converter 1',
+      home: Scaffold(
+        backgroundColor: Colors.green,
+        body: Center(
+          child: Category(
+            color: _categoryColor,
+            name: _categoryName,
+            iconData: _categoryIcon,
           ),
         ),
       ),
-    ));
+    );
   }
+
 }
