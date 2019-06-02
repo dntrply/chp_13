@@ -29,7 +29,7 @@ class unitConverterTile extends StatelessWidget {
         child: InkWell(
           highlightColor: Colors.purple,
           onTap: () {
-            print('I was tpped');
+            print('I was tapped');
           },
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
